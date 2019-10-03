@@ -1,3 +1,6 @@
+<?php
+    include 'db.php';
+?>
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -32,20 +35,36 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Aljun</td>
-                                <td>
-                                    <a href="#" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                                    <a href="#" class="btn btn-warning" type="button"><span class="glyphicon glyphicon-trash"></span></a>
-                                </td>
-                            </tr>
+                         <?php 
+                            $sql = "SELECT * FROM users";
+                             $query = mysqli_query($db->getConn(),$sql);
+                             if($query){
+                                while($row = mysqli_fetch_array($query)){
+                                     if($row > 0){
+                                        echo "
+                                         <tr>
+                                              <td>".$row['id']."</td>
+                                              <td>".$row['fullname']."</td>
+                                              <td>
+                                                 <a href='#' class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
+                                                 <a href='#' class='btn btn-warning' type='button'><span class='glyphicon glyphicon-trash'></span></a>
+                                             </td>
+                                         </tr>
+                                        ";
+                                     }
+                                  }
+                              }else{
+                                  echo "false";
+                              }
+                          ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
 
+
+        <!-- insert modal-->
         <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -54,17 +73,17 @@
                         <h4 class="modal-title">Add</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="POST">
+                        <form method="POST" action="insert.php">
                             <div class="form-group">
                                 <label for="name">Enter Name:</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
-                                    <input class="form-control" id="email" name="email" type="text"/>
+                                    <input class="form-control" id="fname" name="fname" type="text" required/>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block" data-dismiss="modal">Add</button>
+                            <input type="submit" name="insertBtn" class="btn btn-success btn-block" value="Submit">
                         </form>
                     </div> <!-- eof modal-body-->
 

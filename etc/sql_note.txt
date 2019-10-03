@@ -1,0 +1,5 @@
+Database name: mydb
+
+CREATE TABLE users(
+    id INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    fullname VARCHAR(140) NOT NULL);
