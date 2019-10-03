@@ -11,8 +11,6 @@
         $query = mysqli_query($db->getConn(),$sql);
         if($query){
             echo "Successfully Inserted";
-        }else{
-            echo "Error code -1";
         }
     }
 
@@ -28,12 +26,21 @@
                          <td>".$row['fullname']."</td>
                          <td>
                             <a href='#' class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
-                            <a href='#' class='btn btn-warning' type='button'><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href='' id='deleteBtn' userid='".$row['id']."' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span></a>
                         </td>
                     </tr>
                    ";
                 }
              }
+        }
+    }
+
+    if(isset($_POST['deleteBtn'])){
+        $id = $_POST['id'];
+        $sql = "DELETE FROM users WHERE id='$id'";
+        $query= mysqli_query($db->getConn(),$sql);
+        if($query){
+            echo "successfully deleted";
         }
     }
 ?>

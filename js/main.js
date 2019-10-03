@@ -32,4 +32,21 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('body').delegate('#deleteBtn','click',function(event){
+        event.preventDefault();
+        var userid = $(this).attr('userid');
+        $.ajax({
+            url: 'action.php',
+            method: 'POST',
+            data:{
+                deleteBtn:1,
+                id:userid
+            },
+            success: function(response){
+                alert(response);
+                userList();
+            }
+        })
+    });
 });
