@@ -17,7 +17,7 @@
 
            <div class="row">
                 <div class="col-md-12" align="right">
-                <button  class="btn btn-primary" data-toggle="modal" data-target="#insertModal">
+                <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                      <span class="glyphicon glyphicon-plus"></span>
                 </button>
                 </div>
@@ -34,28 +34,7 @@
                                 <th>Function</th>
                             </tr>
                         </thead>
-                        <tbody>
-                         <?php 
-                            $sql = "SELECT * FROM users";
-                             $query = mysqli_query($db->getConn(),$sql);
-                             if($query){
-                                while($row = mysqli_fetch_array($query)){
-                                     if($row > 0){
-                                        echo "
-                                         <tr>
-                                              <td>".$row['id']."</td>
-                                              <td>".$row['fullname']."</td>
-                                              <td>
-                                                 <a href='updateform.php?id=".$row['id']."'  class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
-                                                 <a href='delete.php?id=".$row['id']."' class='btn btn-warning' type='button'><span class='glyphicon glyphicon-trash'></span></a>
-                                             </td>
-                                         </tr>
-                                        ";
-                                     }
-                                  }
-                              }
-                          ?>
-                        </tbody>
+                        <tbody id="tbody"></tbody>
                     </table>
                 </div>
             </div>
@@ -63,25 +42,25 @@
 
 
         <!-- insert modal-->
-        <div class="modal fade" id="insertModal" role="dialog">
-            <div class="modal-dialog modal-md">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title">Add</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="insert.php">
+                        <form method="POST">
                             <div class="form-group">
                                 <label for="name">Enter Name:</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
-                                    <input type="text" class="form-control" id="fname" name="fname" type="text" required/>
+                                    <input class="form-control" id="fname" name="fname" type="text" />
                                 </div>
                             </div>
-                            <input type="submit" name="insertBtn" class="btn btn-success btn-block" value="Submit">
+                            <input type="submit" id="insertBtn" data-dismiss="modal" class="btn btn-success btn-block" value="Submit">
                         </form>
                     </div> <!-- eof modal-body-->
 
@@ -95,5 +74,6 @@
         
         <script src="js/jquery-3.4.1.min.js" ></script>
         <script src="js/bootstrap.js" ></script>
+        <script src="js/main.js"></script>
     </body>
 </html>
