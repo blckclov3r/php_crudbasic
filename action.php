@@ -25,8 +25,8 @@
                          <td>".$row['id']."</td>
                          <td>".$row['fullname']."</td>
                          <td>
-                            <a href='#' class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
-                            <a href='' id='deleteBtn' userid='".$row['id']."' class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href='#' id='selectUpdateBtn' userid='".$row['id']."' fname='".$row['fullname']."' data-toggle='modal' data-target='#updateModal' class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
+                            <a href='#' id='deleteBtn' userid='".$row['id']."'  class='btn btn-warning'><span class='glyphicon glyphicon-trash'></span></a>
                         </td>
                     </tr>
                    ";
@@ -43,4 +43,29 @@
             echo "successfully deleted";
         }
     }
+
+    if(isset($_POST['selectUpdateBtn'])){
+        $id = $_POST['id'];
+        $fname = $_POST['fname'];
+
+        echo "
+            <div class='input-group-addon'>
+                <span class='glyphicon glyphicon-user'></span>
+            </div>
+            <input type='hidden' id='id' value='$id' /> 
+            <input class='form-control' id='name'  value='$fname' type='text' />
+        ";
+
+    }
+
+    if(isset($_POST['updateBtn'])){
+        $id = $_POST['id'];
+        $fname = $_POST['fname'];
+        $sql = "UPDATE users SET fullname='$fname' WHERE id = '$id' ";
+        $query = mysqli_query($db->getConn(),$sql);
+        if($query){
+            echo "successfully updated";
+        }
+    }
+    
 ?>

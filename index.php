@@ -17,7 +17,7 @@
 
            <div class="row">
                 <div class="col-md-12" align="right">
-                <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertModal">
                      <span class="glyphicon glyphicon-plus"></span>
                 </button>
                 </div>
@@ -42,12 +42,12 @@
 
 
         <!-- insert modal-->
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal fade" id="insertModal" role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Add</h4>
+                        <h4 class="modal-title">Insert</h4>
                     </div>
                     <div class="modal-body">
                         <form method="POST">
@@ -60,7 +60,35 @@
                                     <input class="form-control" id="fname" name="fname" type="text" />
                                 </div>
                             </div>
-                            <input type="submit" id="insertBtn" data-dismiss="modal" class="btn btn-success btn-block" value="Submit">
+                            <input type="submit" id="insertBtn" data-dismiss="modal" class="btn btn-success btn-block" value="Insert">
+                        </form>
+                    </div> <!-- eof modal-body-->
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                </div> <!-- eof modal-content-->
+            </div> <!-- eof modal-->
+        </div>
+
+
+        <div class="modal fade" id="updateModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST">
+                            <div class="form-group">
+                                <label for="name">Enter Name:</label>
+                                <div class="input-group" id="update-group">
+                                    <!-- ajax + action.php-->
+                                </div>
+                            </div>
+                            <input type="submit" id="updateBtn" data-dismiss="modal" class="btn btn-primary btn-block" value="Update">
                         </form>
                     </div> <!-- eof modal-body-->
 

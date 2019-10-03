@@ -47,6 +47,44 @@ $(document).ready(function(){
                 alert(response);
                 userList();
             }
-        })
+        });
+    });
+
+    $('body').delegate('#selectUpdateBtn','click',function(event){
+        event.preventDefault();
+        var userid = $(this).attr('userid');
+        var fname = $(this).attr('fname');
+        $.ajax({
+            url: 'action.php',
+            method: 'POST',
+            data:{
+                selectUpdateBtn:1,
+                id:userid,
+                fname:fname
+            },
+            success: function(response){
+                $("#update-group").html(response);
+            }
+        });
+    });
+
+    $("#updateBtn").click(function(event){
+        event.preventDefault();
+        var id = $("#id").val();
+        var fname = $("#name").val();
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data:{
+                updateBtn:1,
+                id:id,
+                fname,fname
+            },
+            success:function(response){
+                console.log(response);
+                userList();
+            }
+        });
+
     });
 });
