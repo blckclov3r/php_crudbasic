@@ -17,7 +17,7 @@
 
            <div class="row">
                 <div class="col-md-12" align="right">
-                <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                <button  class="btn btn-primary" data-toggle="modal" data-target="#insertModal">
                      <span class="glyphicon glyphicon-plus"></span>
                 </button>
                 </div>
@@ -46,15 +46,13 @@
                                               <td>".$row['id']."</td>
                                               <td>".$row['fullname']."</td>
                                               <td>
-                                                 <a href='#' class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
-                                                 <a href='#' class='btn btn-warning' type='button'><span class='glyphicon glyphicon-trash'></span></a>
+                                                 <a href='updateform.php?id=".$row['id']."'  class='btn btn-primary' type='button'><span class='glyphicon glyphicon-pencil'></span></a>
+                                                 <a href='delete.php?id=".$row['id']."' class='btn btn-warning' type='button'><span class='glyphicon glyphicon-trash'></span></a>
                                              </td>
                                          </tr>
                                         ";
                                      }
                                   }
-                              }else{
-                                  echo "false";
                               }
                           ?>
                         </tbody>
@@ -65,8 +63,8 @@
 
 
         <!-- insert modal-->
-        <div class="modal fade" id="myModal" role="dialog">
-            <div class="modal-dialog modal-lg">
+        <div class="modal fade" id="insertModal" role="dialog">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -80,7 +78,7 @@
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
-                                    <input class="form-control" id="fname" name="fname" type="text" required/>
+                                    <input type="text" class="form-control" id="fname" name="fname" type="text" required/>
                                 </div>
                             </div>
                             <input type="submit" name="insertBtn" class="btn btn-success btn-block" value="Submit">
