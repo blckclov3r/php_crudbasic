@@ -1,5 +1,5 @@
 # Simple PHP Login/Registration
-## A simple login/registration built with PHP, MySQL, jQuery, Ajax and Bootstrap
+## A simple crud based built with PHP, MySQL, jQuery, Ajax and Bootstrap
 
 * CRUD
 * MySQLi
