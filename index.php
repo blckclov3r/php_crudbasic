@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.css">
     </head>
     <body>
         <div class="container">
@@ -116,6 +117,8 @@
         
         <script src="js/jquery-3.4.1.min.js" ></script>
         <script src="js/bootstrap.js" ></script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

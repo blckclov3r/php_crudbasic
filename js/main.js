@@ -1,5 +1,8 @@
 $(document).ready(function(){
     userList();
+
+   
+
     function userList(){
         $.ajax({
             method: "POST",
@@ -9,6 +12,7 @@ $(document).ready(function(){
             },
             success: function(response){
                 $("#tbody").html(response);
+                $(".table").DataTable();
             }
         });
     }
