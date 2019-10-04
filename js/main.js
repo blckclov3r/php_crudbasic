@@ -28,8 +28,10 @@ $(document).ready(function(){
             },
             success: function(response){
                 userList();
-                alert(response);
-                $("#insertForm").trigger('reset');
+                $("#notification").html(response);
+                // $("#insertForm").trigger('reset'); 
+                $('#insertForm')[0].reset();
+
             }
         });
     });
@@ -46,7 +48,8 @@ $(document).ready(function(){
             },
             success: function(response){
                 userList();
-                alert(response);
+                // alert(response);
+                $("#notification").html(response);
             }
         });
     });
@@ -82,7 +85,7 @@ $(document).ready(function(){
                 fname,fname
             },
             success:function(response){
-                console.log(response);
+                $("#notification").html(response);
                 userList();
             }
         });

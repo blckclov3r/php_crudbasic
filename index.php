@@ -1,6 +1,3 @@
-<?php
-    include 'db.php';
-?>
 <!DOCTYPE html>
 <html class="no-js"> 
     <head>
@@ -13,20 +10,35 @@
     </head>
     <body>
         <div class="container">
-          <h1>Object Oriented PHP Bootstrap and MySQL CRUD application</h1>
+
+           <center><h2>OOP CRUD</h2> <h4><span>
+           <i>PHP, Bootstrap, MySQL, JQuery, Ajax</i></h4></span></center>
+           <br/>
 
            <div class="row">
-                <div class="col-md-12" align="right">
-                <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertModal">
-                     <span class="glyphicon glyphicon-plus"></span>
-                </button>
+                <div class="col-md-2"></div>
+                <div class="col-md-8" align="right">
+                    <button  type="button" class="btn btn-primary" data-toggle="modal" data-target="#insertModal">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
                 </div>
+                <div class="col-md-2"></div>
            </div>
 
-            <br/>
+            <div class="row" style="margin-top: 8px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div id="notification">
+                        <!-- main.js callback -->
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+         
             <div class="row">
-                <div class="col-md-12">
-                    <table class="table table-bordered table-responsive">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <table class="table table-bordered table-responsive table-hover">
                         <thead>
                             <tr>
                                 <th>User ID</th>
@@ -34,16 +46,18 @@
                                 <th>Function</th>
                             </tr>
                         </thead>
+                        <!-- main.js tbody -->
                         <tbody id="tbody"></tbody>
                     </table>
                 </div>
+                <div class="col-md-2"></div>
             </div>
         </div>
 
 
         <!-- insert modal-->
         <div class="modal fade" id="insertModal" role="dialog">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -74,7 +88,7 @@
 
 
         <div class="modal fade" id="updateModal" role="dialog">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>

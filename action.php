@@ -10,8 +10,14 @@
         $sql = "INSERT INTO users(fullname) VALUES('$fname')";
         $query = mysqli_query($db->getConn(),$sql);
         if($query){
-            echo "Successfully Inserted";
+            echo "
+                <div class='alert alert-success' role='alert'>
+                    <a href='#' class='close' data-dismiss='alert' arial-label='Close'>&times;</a>
+                    <b>Successfully Inserted</b>
+                </div>            
+            ";
         }
+        $db->getClose();
     }
 
     if(isset($_POST['userList'])){
@@ -33,6 +39,7 @@
                 }
              }
         }
+        $db->getClose();
     }
 
     if(isset($_POST['deleteBtn'])){
@@ -40,8 +47,14 @@
         $sql = "DELETE FROM users WHERE id='$id'";
         $query= mysqli_query($db->getConn(),$sql);
         if($query){
-            echo "successfully deleted";
+            echo "
+                  <div class='alert alert-warning' role='alert'>
+                        <a href='#' class='close' data-dismiss='alert' arial-label='Close'>&times;</a>
+                        <b>Successfully Deleted</b>
+                  </div>
+            ";
         }
+        $db->getClose();
     }
 
     if(isset($_POST['selectUpdateBtn'])){
@@ -55,7 +68,7 @@
             <input type='hidden' id='id' value='$id' /> 
             <input class='form-control' id='name'  value='$fname' type='text' />
         ";
-
+        $db->getClose();
     }
 
     if(isset($_POST['updateBtn'])){
@@ -64,8 +77,14 @@
         $sql = "UPDATE users SET fullname='$fname' WHERE id = '$id' ";
         $query = mysqli_query($db->getConn(),$sql);
         if($query){
-            echo "successfully updated";
+            echo "
+                <div class='alert alert-info' role='alert'>
+                    <a href='#' class='close' data-dismiss='alert' arial-label='Close'>&times;</a>
+                    <b>Successfully Updated</b>
+                </div>
+            ";
         }
+        $db->getClose();
     }
     
 ?>

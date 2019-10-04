@@ -3,7 +3,9 @@
     class Database{
         private $conn;
         public function __construct(){
-            $this->conn = mysqli_connect('localhost','root','','mydb');
+            if($this->conn == null){
+                $this->conn = mysqli_connect('localhost','root','','mydb');
+            }
             // if(!$this->conn){
             //     die("Connection error ");
             // }else{
