@@ -50,14 +50,14 @@
                         <h4 class="modal-title">Insert</h4>
                     </div>
                     <div class="modal-body">
-                        <form method="POST">
+                        <form method="POST" id="insertForm">
                             <div class="form-group">
                                 <label for="name">Enter Name:</label>
                                 <div class="input-group">
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
-                                    <input class="form-control" id="fname" name="fname" type="text" />
+                                    <input class="form-control" id="fname" name="fname" type="text" placeholder="Fullname"/>
                                 </div>
                             </div>
                             <input type="submit" id="insertBtn" data-dismiss="modal" class="btn btn-success btn-block" value="Insert">

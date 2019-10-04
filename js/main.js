@@ -27,8 +27,9 @@ $(document).ready(function(){
                 fname:name
             },
             success: function(response){
+                userList();
                 alert(response);
-
+                $("#insertForm").trigger('reset');
             }
         });
     });
@@ -44,8 +45,8 @@ $(document).ready(function(){
                 id:userid
             },
             success: function(response){
-                alert(response);
                 userList();
+                alert(response);
             }
         });
     });
