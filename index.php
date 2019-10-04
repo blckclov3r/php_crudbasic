@@ -7,7 +7,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/dataTables.bootstrap4.css">
     </head>
     <body>
         <div class="container">
@@ -72,7 +71,7 @@
                                     <div class="input-group-addon">
                                         <span class="glyphicon glyphicon-user"></span>
                                     </div>
-                                    <input class="form-control" id="fname" name="fname" type="text" placeholder="Fullname"/>
+                                    <input class="form-control" id="fname" name="fname" type="text" autofocus placeholder="Fullname"/>
                                 </div>
                             </div>
                             <input type="submit" id="insertBtn" data-dismiss="modal" class="btn btn-success btn-block" value="Insert">
@@ -117,8 +116,6 @@
         
         <script src="js/jquery-3.4.1.min.js" ></script>
         <script src="js/bootstrap.js" ></script>
-        <script type="text/javascript" src="js/jquery.dataTables.js"></script>
-        <script type="text/javascript" src="js/dataTables.bootstrap4.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

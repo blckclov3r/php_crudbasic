@@ -66,7 +66,7 @@
                 <span class='glyphicon glyphicon-user'></span>
             </div>
             <input type='hidden' id='id' value='$id' /> 
-            <input class='form-control' id='name'  value='$fname' type='text' />
+            <input class='form-control' id='name' autofocus  value='$fname' type='text' />
         ";
         $db->getClose();
     }
